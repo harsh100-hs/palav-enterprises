@@ -24,7 +24,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <div class="logo">
 
-<img src="Palav-logo.png" alt="PALAV ENTERPRISE">
+<img src="PALAV-logo.png" alt="PALAV ENTERPRISE">
 
 <div>
 
@@ -430,21 +430,45 @@ Tell Us What Are You Looking For? We Will Call You Back
 
 </div>
 
-<form>
+<form onsubmit="sendWhatsApp(); return false;">
 
 <div class="input-row">
 
 <div class="input-group">
-
 <label>Product / Service</label>
+<input type="text" id="product" placeholder="Enter Product / Service" required>
+</div>
 
-<input type="text"
-placeholder="Enter Product / Service">
+<div class="input-group">
+<label>Quantity</label>
+<input type="text" id="quantity" required>
+</div>
+
+<div class="input-group">
+<label>Select Unit</label>
+<input type="text" id="unit" placeholder="Unit" required>
+</div>
 
 </div>
 
 <div class="input-group">
+<label>Mobile Number</label>
+<input type="tel" id="mobile" placeholder="Mobile Number" required>
+</div>
 
+<div class="btn-group">
+
+<button type="submit" class="send-btn">
+Send Inquiry
+</button>
+
+<a href="tel:+919326336126" class="call-btn">
+📞 Call Now
+</a>
+
+</div>
+
+</form>
 <label>Quantity</label>
 
 <input type="text">
@@ -788,6 +812,29 @@ class="top-btn">
 
 </a>
 
+<script>
 
+function sendWhatsApp(){
+
+let product = document.getElementById("product").value;
+let quantity = document.getElementById("quantity").value;
+let unit = document.getElementById("unit").value;
+let mobile = document.getElementById("mobile").value;
+
+let message =
+"Hello PALAV ENTERPRISE,%0A%0A" +
+"Product : " + product + "%0A" +
+"Quantity : " + quantity + "%0A" +
+"Unit : " + unit + "%0A" +
+"Customer Mobile : " + mobile;
+
+window.open(
+"https://wa.me/919326336126?text=" + message,
+"_blank"
+);
+
+}
+
+</script>
 </body>
 </html>
